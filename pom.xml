@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Spring Boot Parent POM: 의존성 버전 관리를 자동화합니다. -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.3</version> <!-- 최신 안정화 버전 사용을 권장합니다. -->
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 프로젝트 정보 -->
+    <groupId>com.example</groupId>
+    <artifactId>docker-spring-app</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>docker-spring-app</name>
+    <description>Simple Spring Boot app for Docker multi-stage build</description>
+
+    <!-- 프로젝트 속성: 사용할 자바 버전을 지정합니다. -->
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <!-- 의존성 관리 -->
+    <dependencies>
+        <!-- Spring Web: @RestController, @GetMapping 등 웹 애플리케이션 개발에 필요한 라이브러리 포함 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Test: @WebMvcTest, MockMvc 등 테스트에 필요한 라이브러리 포함 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope> <!-- 이 의존성은 테스트 시에만 사용됩니다. -->
+        </dependency>
+    </dependencies>
+
+    <!-- 빌드 설정 -->
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven Plugin: 애플리케이션을 실행 가능한 JAR 파일로 패키징합니다. -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
